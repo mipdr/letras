@@ -7,7 +7,6 @@
 #include <fstream>
 
 static multimap<int, char> mapa;
-static int* recuento;
 /**
   *  @brief T.D.A. Juego
   * Este T.D.A está diseñado específicamente para ser utilizado en el contexto 

@@ -5,7 +5,7 @@ INC=./include/
 
 FLAGS=-Wall -std=c++11 -I$(INC) -g
 
-all: $(BIN)letras $(BIN)estandarizar_diccionario
+all: $(BIN)letras $(BIN)estandarizar_diccionario 
 
 $(BIN)estandarizar_diccionario: $(SRC)estandarizar_diccionario.cpp
 	g++ $(FLAGS) -o $@ $^
@@ -14,6 +14,7 @@ $(BIN)letras: $(OBJ)diccionario.o $(OBJ)prueba_letras.o $(OBJ)juego.o $(OBJ)conj
 	g++ $(FLAGS) -o $@ $^
 	
 $(OBJ)diccionario.o: $(SRC)diccionario.cpp
+	mkdir -p obj bin
 	g++ $(FLAGS) -o $@ -c $^
 	
 $(OBJ)prueba_letras.o: $(SRC)prueba_letras.cpp
@@ -30,3 +31,4 @@ $(OBJ)bolsa_letras.o: $(SRC)bolsa_letras.cpp
 	
 clean:
 	rm -f $(BIN)* $(OBJ)*
+	rm -d obj bin
